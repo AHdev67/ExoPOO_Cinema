@@ -2,6 +2,7 @@
 
 class Genre{
     private string $_genre;
+    private array $_listeFilms;
 
     public function __construct(string $genre){
         $this->_genre = $genre;
@@ -26,6 +27,16 @@ class Genre{
         return "$this->_genre";
     }
 
+    public function afficherListeFilms(){
+        $result= "Films de $this : <br>-------------------------------------<br>";
+        foreach ($this->_listeFilms as $films){
+            $result.=$films."<br>";
+        }
+        return $result;
+    }
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
+    public function fillListeFilms(Film $film){
+        $this->_listeFilms[]= "-$film";
+    }
 }

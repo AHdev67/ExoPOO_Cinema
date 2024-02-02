@@ -10,6 +10,7 @@ class Casting{
         $this->_acteur = $acteur;
         $this->_role = $role;
         $this->_acteur->fillFilmographie($this);
+        $this->_film->fillListeCasting($this);
     }
 
     // --------------------------------------- GETTER/SETTER FILM ------------------------------------------------- 
@@ -54,9 +55,16 @@ class Casting{
     // --------------------------------------- AFFICHAGE -------------------------------------------------
 
     public function __toString(){
-        return "$this->_acteur joue $this->_role dans $this->_film";
+        return "-$this->_acteur dans le rôle de $this->_role.";
     }
 
+    public function afficherRole(){
+        return "-$this->_film, Rôle : $this->_role.";
+    }
+
+    public function afficherActeur(){
+        return "-$this->_acteur, dans le rôle de $this->_role.";
+    }
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
 }
