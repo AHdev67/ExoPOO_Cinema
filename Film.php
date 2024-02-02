@@ -7,6 +7,7 @@ class Film{
     private string $_synopsis;
     private Realisateur $_realisateur;
     private Genre $_genre;
+    private array $_listeCasting;
 
 
     public function __construct(string $titre, string $dateSortie, int $duree, Realisateur $realisateur, Genre $genre){
@@ -16,6 +17,7 @@ class Film{
         $this->_realisateur = $realisateur;
         $this->_genre = $genre;
         $this->_realisateur->fillFilmographie($this);
+        $this->_genre->fillListeFilms($this);
     }
     
     // --------------------------------------- GETTER/SETTER TITRE -------------------------------------------------
@@ -37,7 +39,7 @@ class Film{
 
     public function get_dateSortie()
     {
-        return $this->_dateSortie;
+        return $this->_dateSortie->format("Y");
     }
 
     public function set_dateSortie($_dateSortie)
@@ -78,12 +80,28 @@ class Film{
     // --------------------------------------- AFFICHAGE -------------------------------------------------
 
     public function __toString(): string{
-        return "$this->_titre ( ".$this->_dateSortie.")";
+        return "$this->_titre (".$this->get_dateSortie().")";
+    }
+
+    public function afficherFilm(){
+        return "-$this, Durée : $this->_duree minutes";
+    }
+
+    public function afficherCasting(){
+        $result= "Casting de $this :<br>-------------------------------------<br>";
+        foreach ($this->_listeCasting as $acteurs){
+        $result.=$acteurs."<br>";
+        }
+            return $result;
     }
 
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
     public function addSynopsis (string $synopsis){
         $this->_synopsis = $synopsis;
+    }
+
+    public function fillListeCasting (Casting $casting){
+        $this->_listeCasting[]= $casting;
     }
 }
