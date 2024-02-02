@@ -52,7 +52,7 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
     $terminator2= new Film("Terminator 2 : Judgement Day", "1991", 137, $jamesCameron, $scifi);
 
     //ROLES :
-    $theTerminator= new Role ("T-800 Terminator");
+    $theTerminator= new Role ("T-800");
     $majorSchaefer= new Role ("Major Alan 'Dutch' Schaefer");
     $kyleReese= new Role ("Kyle Reese");
     $sarahConnor= new Role ("Sarah Connor");
@@ -64,19 +64,15 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
     $castingTerminator2= new Casting($terminator2, $arnoldSchwarzenegger, $theTerminator);
     $castingSarahConnor2= new Casting($terminator2, $lindaHamilton, $sarahConnor);
 
-
 //---------------------------------------------------------------------------------------------------------------------------------
     /*FONCTIONS : 
         Acteur & Realisateur -> afficherFilmographie
         Film -> afficherListeActeurs
     */
-   
+    echo $theTerminator->afficherlisteActeurs();
     echo $terminator->afficherCasting();
-    echo "<br><br>";
-     echo $scifi->afficherListeFilms();
-    echo "<br><br>";
+    echo $scifi->afficherListeFilms();
     echo $jamesCameron->afficherFilmographie();
-    echo "<br><br>";
     echo $arnoldSchwarzenegger->afficherFilmographie();
     
 
