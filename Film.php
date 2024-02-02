@@ -15,6 +15,7 @@ class Film{
         $this->_duree = $duree;
         $this->_realisateur = $realisateur;
         $this->_genre = $genre;
+        $this->_realisateur->fillFilmographie($this);
     }
     
     // --------------------------------------- GETTER/SETTER TITRE -------------------------------------------------
@@ -74,7 +75,7 @@ class Film{
         return $this;
     }
 
-    // --------------------------------------- TOSTRING -------------------------------------------------
+    // --------------------------------------- AFFICHAGE -------------------------------------------------
 
     public function __toString(): string{
         return "$this->_titre ( ".$this->_dateSortie.")";

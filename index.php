@@ -33,4 +33,31 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
     spl_autoload_register(function ($class_name) {
         include $class_name . '.php';
     });
+
+    //GENRES :
+    $scifi= new Genre("SF");
+    $horreur= new Genre("Horreur");
+
+    //REALISATEURS :
+    $jamesCameron= new Realisateur("James", "Cameron", "H", "16-08-1954");
+
+    //ACTEURS :
+    $arnoldSchwarzenegger= new Acteur("Arnold", "Schwarzenegger", "H", "30-07-1947");
+
+    //FILMS :
+    $terminator= new Film("The Terminator", "1984", 107, $jamesCameron, $scifi);
+
+    //ROLES :
+    $theTerminator= new Role ("the Terminator");
+    $majorSchaefer= new Role ("Major Alan 'Dutch' Schaefer");
+
+    //CASTINGS :
+    $castingTerminator= new Casting($terminator, $arnoldSchwarzenegger, $theTerminator);
+
+//---------------------------------------------------------------------------------------------------------------------------------
+    /*FONCTIONS : 
+        Acteur & Realisateur -> afficherFilmographie
+
+    */
+
 ?>

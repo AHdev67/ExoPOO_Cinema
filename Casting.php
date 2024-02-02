@@ -9,6 +9,7 @@ class Casting{
         $this->_film = $film;
         $this->_acteur = $acteur;
         $this->_role = $role;
+        $this->_acteur->fillFilmographie($this);
     }
 
     // --------------------------------------- GETTER/SETTER FILM ------------------------------------------------- 
@@ -50,7 +51,7 @@ class Casting{
         return $this;
     }
 
-    // --------------------------------------- TOSTRING -------------------------------------------------
+    // --------------------------------------- AFFICHAGE -------------------------------------------------
 
     public function __toString(){
         return "$this->_acteur joue $this->_role dans $this->_film";
