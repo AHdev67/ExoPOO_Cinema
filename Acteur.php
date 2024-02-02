@@ -31,7 +31,7 @@ class Acteur extends Personne{
     }
 
     public function afficherFilmographie(){
-        $result= "Films dans lesquels $this à joué :";
+        $result= "Filmographie de $this : <br>-------------------------------------<br>";
         foreach ($this->_filmographie as $films){
             $result.=$films."<br>";
         }
@@ -41,6 +41,6 @@ class Acteur extends Personne{
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
     public function fillFilmographie(Casting $casting){
-        $this->_filmographie[]= $casting;
+        $this->_filmographie[]= $casting->afficherRole();
     }
 }
