@@ -42,14 +42,16 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
     $jamesCameron= new Realisateur("James", "Cameron", "H", "16-08-1954");
 
     //ACTEURS :
-    $arnoldSchwarzenegger= new Acteur("Arnold", "Schwarzenegger", "H", "30-07-1947");
-    $lindaHamilton= new Acteur("Linda", "Hamilton", "F", "26-09-1956");
-    $michaelBiehn= new Acteur("Michael", "Biehn", "H", "31-07-1956");
-    $robertPatrick= new Acteur("Robert", "Patrick", "H", "05-11-1958");
+    $arnoldSchwarzenegger= new Acteur("Arnold", "Schwarzenegger", "H", "1947-07-30");
+    $lindaHamilton= new Acteur("Linda", "Hamilton", "F", "1956-09-26");
+    $michaelBiehn= new Acteur("Michael", "Biehn", "H", "1956-07-31");
+    $robertPatrick= new Acteur("Robert", "Patrick", "H", "1958-11-05");
 
     //FILMS :
-    $terminator= new Film("The Terminator", "1984", 107, $jamesCameron, $scifi);
-    $terminator2= new Film("Terminator 2 : Judgement Day", "1991", 137, $jamesCameron, $scifi);
+    $terminator= new Film("The Terminator", "1984-01-01", 107, $jamesCameron, $scifi);
+    $terminator2= new Film("Terminator 2 : Judgement Day", "1991-01-01", 137, $jamesCameron, $scifi);
+    $aliens= new Film("Aliens", "1986-01-01", 137, $jamesCameron, $scifi);
+    $avatar= new Film("Avatar", "2009-01-01", 167, $jamesCameron, $scifi);   
 
     //ROLES :
     $theTerminator= new Role ("T-800");
