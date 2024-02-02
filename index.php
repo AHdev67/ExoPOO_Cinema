@@ -43,21 +43,41 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
 
     //ACTEURS :
     $arnoldSchwarzenegger= new Acteur("Arnold", "Schwarzenegger", "H", "30-07-1947");
+    $lindaHamilton= new Acteur("Linda", "Hamilton", "F", "26-09-1956");
+    $michaelBiehn= new Acteur("Michael", "Biehn", "H", "31-07-1956");
+    $robertPatrick= new Acteur("Robert", "Patrick", "H", "05-11-1958");
 
     //FILMS :
     $terminator= new Film("The Terminator", "1984", 107, $jamesCameron, $scifi);
+    $terminator2= new Film("Terminator 2 : Judgement Day", "1991", 137, $jamesCameron, $scifi);
 
     //ROLES :
-    $theTerminator= new Role ("the Terminator");
+    $theTerminator= new Role ("T-800 Terminator");
     $majorSchaefer= new Role ("Major Alan 'Dutch' Schaefer");
+    $kyleReese= new Role ("Kyle Reese");
+    $sarahConnor= new Role ("Sarah Connor");
 
     //CASTINGS :
     $castingTerminator= new Casting($terminator, $arnoldSchwarzenegger, $theTerminator);
+    $castingSarahConnor=new Casting($terminator, $lindaHamilton, $sarahConnor);
+    $castingKyleReese= new Casting($terminator, $michaelBiehn, $kyleReese);
+    $castingTerminator2= new Casting($terminator2, $arnoldSchwarzenegger, $theTerminator);
+    $castingSarahConnor2= new Casting($terminator2, $lindaHamilton, $sarahConnor);
+
 
 //---------------------------------------------------------------------------------------------------------------------------------
     /*FONCTIONS : 
         Acteur & Realisateur -> afficherFilmographie
-
+        Film -> afficherListeActeurs
     */
+   
+    echo $terminator->afficherCasting();
+    echo "<br><br>";
+     echo $scifi->afficherListeFilms();
+    echo "<br><br>";
+    echo $jamesCameron->afficherFilmographie();
+    echo "<br><br>";
+    echo $arnoldSchwarzenegger->afficherFilmographie();
+    
 
 ?>
