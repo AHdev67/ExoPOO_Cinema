@@ -31,15 +31,16 @@ class Realisateur extends Personne{
     }
 
     public function afficherFilmographie(){
-        $result= "Filmographie de $this : <br>-------------------------------------<br>";
+        $result= "Filmographie de $this : <br>-------------------------------------<br><ul>";
         foreach ($this->_filmographie as $films){
-            $result.=$films."<br>";
+            $result.="<li>".$films."</li><br>";
         }
-        $result.= "<br><br>";
+        $result.= "</ul><br>";
         return $result;
     }
 
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
+
 
     public function fillFilmographie(Film $film){
         $this->_filmographie[] = $film->afficherFilm();

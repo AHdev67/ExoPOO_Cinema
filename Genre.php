@@ -28,16 +28,16 @@ class Genre{
     }
 
     public function afficherListeFilms(){
-        $result= "Films de $this : <br>-------------------------------------<br>";
+        $result= "Films de $this : <br>-------------------------------------<br><ul>";
         foreach ($this->_listeFilms as $films){
-            $result.=$films."<br>";
+            $result.="<li>".$films."</li><br>";
         }
-        $result.= "<br><br>";
+        $result.= "</ul><br>";
         return $result;
     }
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
     public function fillListeFilms(Film $film){
-        $this->_listeFilms[]= "-$film";
+        $this->_listeFilms[]= $film;
     }
 }

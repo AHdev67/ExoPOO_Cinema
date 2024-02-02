@@ -37,9 +37,9 @@ class Film{
 
     // --------------------------------------- GETTER/SETTER DATE SORTIE -------------------------------------------------
 
-    public function get_dateSortie()
+    public function get_dateSortie(): DateTime
     {
-        return $this->_dateSortie->format("Y");
+        return $this->_dateSortie;
     }
 
     public function set_dateSortie($_dateSortie)
@@ -80,19 +80,19 @@ class Film{
     // --------------------------------------- AFFICHAGE -------------------------------------------------
 
     public function __toString(): string{
-        return "$this->_titre (".$this->get_dateSortie().")";
+        return "$this->_titre (".$this->get_dateSortie()->format("Y").")";
     }
 
     public function afficherFilm(){
-        return "-$this, Durée : $this->_duree minutes";
+        return "$this, Durée : $this->_duree minutes";
     }
 
     public function afficherCasting(){
-        $result= "Casting de $this :<br>-------------------------------------<br>";
+        $result= "Casting de $this :<br>-------------------------------------<br><ul>";
         foreach ($this->_listeCasting as $acteurs){
-        $result.=$acteurs."<br>";
+        $result.="<li>".$acteurs."</li><br>";
         }
-        $result.= "<br><br>";
+        $result.= "</ul><br>";
         return $result;
     }
 

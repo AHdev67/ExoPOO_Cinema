@@ -28,11 +28,11 @@ class Role{
     }
 
     public function afficherListeActeurs(){
-        $result= "Acteurs ayant incarné $this : <br>-------------------------------------<br>";
+        $result= "Acteurs ayant incarné $this : <br>-------------------------------------<br><ul>";
         foreach ($this->_listeActeurs as $acteur){
-            $result.=$acteur."<br>";
+            $result.="<li>".$acteur."</li><br>";
         }
-        $result.= "<br><br>";
+        $result.= "</ul><br>";
         return $result;
     }
 
