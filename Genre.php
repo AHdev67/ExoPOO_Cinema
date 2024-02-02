@@ -32,6 +32,7 @@ class Genre{
         foreach ($this->_listeFilms as $films){
             $result.=$films."<br>";
         }
+        $result.= "<br><br>";
         return $result;
     }
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------

@@ -35,6 +35,7 @@ class Realisateur extends Personne{
         foreach ($this->_filmographie as $films){
             $result.=$films."<br>";
         }
+        $result.= "<br><br>";
         return $result;
     }
 

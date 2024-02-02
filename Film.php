@@ -92,7 +92,8 @@ class Film{
         foreach ($this->_listeCasting as $acteurs){
         $result.=$acteurs."<br>";
         }
-            return $result;
+        $result.= "<br><br>";
+        return $result;
     }
 
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
