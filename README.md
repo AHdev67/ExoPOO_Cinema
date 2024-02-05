@@ -1,4 +1,4 @@
-#H1 Exercice de POO en PHP autour du thème du cinéma.
+Exercice de POO en PHP autour du thème du cinéma.
 
 FEATURES : 
 -  Afficher la filmographie d'un réalisateur.
