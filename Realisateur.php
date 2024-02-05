@@ -7,17 +7,18 @@ class Realisateur extends Personne{
         $this->_nom = $nom;
         $this->_prenom = $prenom;
         $this->_sexe = $sexe;
-        $this->_dateNaissance = new DateTime ($dateNaissance);
+        $this->_dateNaissance = new DateTime($dateNaissance);
+        $this->_filmographie = [];
     }
 
     // --------------------------------------- GETTER/SETTER FILMOGRAPHIE -------------------------------------------------
 
-    public function get_filmographie()
+    public function getFilmographie()
     {
         return $this->_filmographie;
     }
 
-    public function set_filmographie($_filmographie)
+    public function setFilmographie($_filmographie)
     {
         $this->_filmographie = $_filmographie;
 
@@ -31,18 +32,24 @@ class Realisateur extends Personne{
     }
 
     public function afficherFilmographie(){
-        $result= "Filmographie de $this : <br>-------------------------------------<br><ul>";
+
+        $result = "<h3>Filmographie de $this :</h3>";
+        $result .= "<ul>";
+
+        usort($this->_filmographie, [Film::class,"comparerTab"]);
+
         foreach ($this->_filmographie as $films){
-            $result.="<li>".$films."</li><br>";
+            $result .= "<li>".$films->afficherFilm()."</li>";
         }
-        $result.= "</ul><br>";
-        return $result;
+
+        $result .= "</ul>";
+        $result .= "<p>---------------------------------------------------------------</p>";
+        echo $result;
     }
 
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
-
-    public function fillFilmographie(Film $film){
-        $this->_filmographie[] = $film->afficherFilm();
+    public function ajouterFilm(Film $film){
+        $this->_filmographie[] = $film;
     }
 }

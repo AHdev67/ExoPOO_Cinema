@@ -9,12 +9,12 @@ class Genre{
     }
 
     // --------------------------------------- GETTER/SETTER GENRE -------------------------------------------------
-    public function get_genre()
+    public function getGenre()
     {
         return $this->_genre;
     }
 
-    public function set_genre($_genre)
+    public function setGenre($_genre)
     {
         $this->_genre = $_genre;
 
@@ -28,12 +28,18 @@ class Genre{
     }
 
     public function afficherListeFilms(){
-        $result= "Films de $this : <br>-------------------------------------<br><ul>";
+        $result= "<h3>Films de $this :</h3>";
+        $result .= "<ul>";
+
+        usort($this->_listeFilms, [Film::class,"comparerTab"]);
+
         foreach ($this->_listeFilms as $films){
-            $result.="<li>".$films."</li><br>";
+            $result.="<li>".$films."</li>";
         }
-        $result.= "</ul><br>";
-        return $result;
+
+        $result.= "</ul>";
+        $result .= "<p>---------------------------------------------------------------</p>";
+        echo $result;
     }
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 

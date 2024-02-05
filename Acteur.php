@@ -7,19 +7,20 @@ class Acteur extends Personne{
         $this->_nom = $nom;
         $this->_prenom = $prenom;
         $this->_sexe = $sexe;
-        $this->_dateNaissance = new DateTime ($dateNaissance);
+        $this->_dateNaissance = new DateTime($dateNaissance);
+        $this->_filmographie = [];
     }
 
     // --------------------------------------- GETTER/SETTER FILMOGRAPHIE -------------------------------------------------
 
-    public function get_filmographie()
+    public function getFilmographie()
     {
         return $this->_filmographie;
     }
 
-    public function set_filmographie($_filmographie)
+    public function setFilmographie($filmographie)
     {
-        $this->_filmographie = $_filmographie;
+        $this->_filmographie = $filmographie;
 
         return $this;
     }
@@ -31,16 +32,24 @@ class Acteur extends Personne{
     }
 
     public function afficherFilmographie(){
-        $result= "Filmographie de $this : <br>-------------------------------------<br><ul>";
-        foreach ($this->_filmographie as $films){
-            $result.="<li>".$films."</li><br>";
+
+        $result = "<h3>Filmographie de $this :</h3>";
+        $result .= "<ul>";
+
+        usort($this->_filmographie, [Casting::class,"comparerCasting"]);
+
+        foreach ($this->_filmographie as $role){
+            $result .= "<li>".$role->afficherRole()."</li>";
         }
-        $result.= "</ul><br>";
-        return $result;
+
+        $result .= "</ul>";
+        $result .= "<p>---------------------------------------------------------------</p>";
+        echo $result;
     }
+
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
-    public function fillFilmographie(Casting $casting){
-        $this->_filmographie[]= $casting->afficherRole();
+    public function ajouterCasting(Casting $casting){
+        $this->_filmographie[]= $casting;
     }
 }
