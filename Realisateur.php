@@ -49,6 +49,7 @@ class Realisateur extends Personne{
 
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
+    //ajoute un film à la filmographie du réalisateur
     public function ajouterFilm(Film $film){
         $this->_filmographie[] = $film;
     }

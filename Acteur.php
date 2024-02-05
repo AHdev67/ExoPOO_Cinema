@@ -49,6 +49,7 @@ class Acteur extends Personne{
 
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
+    //ajoute un film à la filmographie de l'acteur
     public function ajouterCasting(Casting $casting){
         $this->_filmographie[]= $casting;
     }

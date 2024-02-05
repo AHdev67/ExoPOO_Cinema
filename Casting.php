@@ -9,18 +9,18 @@ class Casting{
         $this->_film = $film;
         $this->_acteur = $acteur;
         $this->_role = $role;
-        $this->_acteur->fillFilmographie($this);
+        $this->_acteur->ajouterCasting($this);
         $this->_film->fillListeCasting($this);
-        $this->_role->fillListeActeurs($this);
+        $this->_role->ajouterActeur($this);
     }
 
     // --------------------------------------- GETTER/SETTER FILM ------------------------------------------------- 
-    public function get_film()
+    public function getFilm()
     {
         return $this->_film;
     }
 
-    public function set_film($_film)
+    public function setFilm($_film)
     {
         $this->_film = $_film;
 
@@ -28,12 +28,13 @@ class Casting{
     }
 
     // --------------------------------------- GETTER/SETTER ACTEUR -------------------------------------------------
-    public function get_acteur()
+
+    public function getActeur()
     {
         return $this->_acteur;
     }
 
-    public function set_acteur($_acteur)
+    public function setActeur($_acteur)
     {
         $this->_acteur = $_acteur;
 
@@ -41,12 +42,13 @@ class Casting{
     }
 
     // --------------------------------------- GETTER/SETTER ROLE -------------------------------------------------
-    public function get_role()
+
+    public function getRole()
     {
         return $this->_role;
     }
 
-    public function set_role($_role)
+    public function setRole($_role)
     {
         $this->_role = $_role;
 
@@ -72,4 +74,21 @@ class Casting{
     }
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
+    //Getter spécifique pour récuperer la valeur de la propriété _dateSortie de l'objet Film qu'on passe en paramètre à l'objet Casting. 
+    public function getAnneeSortie(){
+        return $this->_film->getAnneeSortie();
+    }
+
+    //méthode de tri basée sur l'année de sortie du film
+    public static function comparerCasting ($a, $b){
+        if ($a->getAnneeSortie() != $b->getAnneeSortie()) {
+            return $a->getAnneeSortie() < $b->getAnneeSortie() ? -1 : 1;
+        } else {
+            if ($a->getAnneeSortie() != $b->getAnneeSortie()) {
+                return $a->get_duree() < $b->get_duree() ? -1 : 1;
+            } else {
+                return 0;
+            }
+        }
+    }
 }

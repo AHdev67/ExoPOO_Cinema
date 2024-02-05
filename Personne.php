@@ -15,12 +15,12 @@ class Personne{
 
     // --------------------------------------- GETTER/SETTER NOM -------------------------------------------------
 
-    public function get_nom()
+    public function getNom()
     {
         return $this->_nom;
     }
 
-    public function set_nom($_nom)
+    public function setNom($_nom)
     {
         $this->_nom = $_nom;
 
@@ -29,12 +29,12 @@ class Personne{
 
     // --------------------------------------- GETTER/SETTER PRENOM -------------------------------------------------
 
-    public function get_prenom()
+    public function getPrenom()
     {
         return $this->_prenom;
     }
 
-    public function set_prenom($_prenom)
+    public function setPrenom($_prenom)
     {
         $this->_prenom = $_prenom;
 
@@ -43,12 +43,12 @@ class Personne{
 
     // --------------------------------------- GETTER/SETTER SEXE -------------------------------------------------
 
-    public function get_sexe()
+    public function getSexe()
     {
         return $this->_sexe;
     }
 
-    public function set_sexe($_sexe)
+    public function setSexe($_sexe)
     {
         $this->_sexe = $_sexe;
 
@@ -57,12 +57,12 @@ class Personne{
 
     // --------------------------------------- GETTER/SETTER DATE NAISSANCE -------------------------------------------------
 
-    public function get_dateNaissance()
+    public function getDateNaissance()
     {
         return $this->_dateNaissance;
     }
 
-    public function set_dateNaissance($_dateNaissance)
+    public function setDateNaissance($_dateNaissance)
     {
         $this->_dateNaissance = $_dateNaissance;
 

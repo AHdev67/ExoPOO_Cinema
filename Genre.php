@@ -43,7 +43,8 @@ class Genre{
     }
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
-    public function fillListeFilms(Film $film){
+    //ajoute un film à la liste des films de ce genre.
+    public function ajouterFilmDeGenre(Film $film){
         $this->_listeFilms[]= $film;
     }
 }

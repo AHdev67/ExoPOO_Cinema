@@ -9,12 +9,12 @@ class Role{
     }
 
     // --------------------------------------- GETTER/SETTER ROLE -------------------------------------------------
-    public function get_nomRole()
+    public function getNomRole()
     {
         return $this->_nomRole;
     }
 
-    public function set_nomRole($_nomRole)
+    public function setNomRole($_nomRole)
     {
         $this->_nomRole = $_nomRole;
 
@@ -28,17 +28,23 @@ class Role{
     }
 
     public function afficherListeActeurs(){
-        $result= "Acteurs ayant incarné $this : <br>-------------------------------------<br><ul>";
+
+        $result = "<h3>Acteurs ayant incarné $this :</h3>";
+        $result .=  "<ul>";
+
         foreach ($this->_listeActeurs as $acteur){
-            $result.="<li>".$acteur."</li><br>";
+            $result .= "<li>".$acteur."</li>";
         }
-        $result.= "</ul><br>";
-        return $result;
+
+        $result .=  "</ul>";
+        $result .= "<p>---------------------------------------------------------------</p>";
+        echo $result;
     }
 
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
-    public function fillListeActeurs(Casting $acteur){
+    //ajoute un acteur à la liste d'acteurs ayant joué ce rôle
+    public function ajouterActeur(Casting $acteur){
         $this->_listeActeurs[]= $acteur->afficherActeurFilm();
     }
 

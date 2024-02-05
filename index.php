@@ -29,6 +29,8 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
 
 <h2>Résultat</h2>
 
+<p>--------------------------------------------------------------------------------------------------------------------</p>
+
 <?php
     spl_autoload_register(function ($class_name) {
         include $class_name . '.php';
@@ -48,10 +50,10 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
     $robertPatrick= new Acteur("Robert", "Patrick", "H", "1958-11-05");
 
     //FILMS :
-    $terminator= new Film("The Terminator", "1984-01-01", 107, $jamesCameron, $scifi);
-    $terminator2= new Film("Terminator 2 : Judgement Day", "1991-01-01", 137, $jamesCameron, $scifi);
-    $aliens= new Film("Aliens", "1986-01-01", 137, $jamesCameron, $scifi);
-    $avatar= new Film("Avatar", "2009-01-01", 167, $jamesCameron, $scifi);   
+    $terminator= new Film("The Terminator", 1984, 107, $jamesCameron, $scifi);
+    $terminator2= new Film("Terminator 2 : Judgement Day", 1991, 137, $jamesCameron, $scifi);
+    $aliens= new Film("Aliens", 1986, 137, $jamesCameron, $scifi);
+    $avatar= new Film("Avatar", 2009, 167, $jamesCameron, $scifi);
 
     //ROLES :
     $theTerminator= new Role ("T-800");
@@ -71,11 +73,11 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
         Acteur & Realisateur -> afficherFilmographie
         Film -> afficherListeActeurs
     */
-    echo $theTerminator->afficherlisteActeurs();
-    echo $terminator->afficherCasting();
-    echo $scifi->afficherListeFilms();
-    echo $jamesCameron->afficherFilmographie();
-    echo $arnoldSchwarzenegger->afficherFilmographie();
+    $theTerminator->afficherlisteActeurs();
+    $terminator->afficherCasting();
+    $scifi->afficherListeFilms();
+    $jamesCameron->afficherFilmographie();
+    $arnoldSchwarzenegger->afficherFilmographie();
     
 
 ?>
