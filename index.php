@@ -78,6 +78,4 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
     $scifi->afficherListeFilms();
     $jamesCameron->afficherFilmographie();
     $arnoldSchwarzenegger->afficherFilmographie();
-    
-
 ?>

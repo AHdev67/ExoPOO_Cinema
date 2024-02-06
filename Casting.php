@@ -10,8 +10,8 @@ class Casting{
         $this->_acteur = $acteur;
         $this->_role = $role;
         $this->_acteur->ajouterCasting($this);
-        $this->_film->fillListeCasting($this);
-        $this->_role->ajouterActeur($this);
+        $this->_film->ajouterCasting($this);
+        $this->_role->ajouterCasting($this);
     }
 
     // --------------------------------------- GETTER/SETTER FILM ------------------------------------------------- 
@@ -65,13 +65,6 @@ class Casting{
         return "$this->_film, Rôle : $this->_role.";
     }
 
-    public function afficherActeur(){
-        return "$this->_acteur, dans le rôle de $this->_role.";
-    }
-
-    public function afficherActeurFilm(){
-        return "$this->_acteur, dans $this->_film";
-    }
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
     //Getter spécifique pour récuperer la valeur de la propriété _dateSortie de l'objet Film qu'on passe en paramètre à l'objet Casting. 

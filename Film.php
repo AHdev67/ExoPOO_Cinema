@@ -130,7 +130,7 @@ class Film{
     }
 
     //ajoute un casting (acteur et son rôle) à la liste du casting du film
-    public function fillListeCasting (Casting $casting){
+    public function ajouterCasting (Casting $casting){
         $this->_listeCasting[]= $casting;
     }
 }

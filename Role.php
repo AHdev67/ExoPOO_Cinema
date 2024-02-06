@@ -2,10 +2,12 @@
 
 class Role{
     private string $_nomRole;
-    private array $_listeActeurs;
+    private array $_castings;
 
     public function __construct(string $nomRole){
         $this->_nomRole = $nomRole;
+
+        $this->_castings = [];
     }
 
     // --------------------------------------- GETTER/SETTER ROLE -------------------------------------------------
@@ -32,8 +34,8 @@ class Role{
         $result = "<h3>Acteurs ayant incarné $this :</h3>";
         $result .=  "<ul>";
 
-        foreach ($this->_listeActeurs as $acteur){
-            $result .= "<li>".$acteur."</li>";
+        foreach ($this->_castings as $casting){
+            $result .= "<li>".$casting->getActeur()." (".$casting->getFilm().")"."</li>";
         }
 
         $result .=  "</ul>";
@@ -43,9 +45,8 @@ class Role{
 
     // --------------------------------------- METHODES CUSTOM -------------------------------------------------
 
-    //ajoute un acteur à la liste d'acteurs ayant joué ce rôle
-    public function ajouterActeur(Casting $acteur){
-        $this->_listeActeurs[]= $acteur->afficherActeurFilm();
+    //ajoute un casting à la liste des castings
+    public function ajouterCasting(Casting $casting){
+        $this->_castings[] = $casting;
     }
-
 }
