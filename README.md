@@ -1,10 +1,12 @@
-Exercice de POO en PHP autour du thème du cinéma.
+# EXO CINEMA
+
+PHP program centered around the theme of cinema.
 
 FEATURES : 
--  Afficher la filmographie d'un réalisateur.
--  Afficher la filmographie d'un acteur.
--  Afficher le casting d'un film.
-- Afficher les différents films appartenant à un genre.
-- Afficher les différents acteurs ayant joué un rôle précis.
+- Display a director's filmography.
+- Display an actor's filmography.
+- Display a movie's casting.
+- Display movies per genre.
+- Display every actor who played a certain role.
 
-Les listes contenant des films sont triées par odre ascendant basé sur la date de sortie de ces films.
+Lists are in ascending order based on the movie's release year.
